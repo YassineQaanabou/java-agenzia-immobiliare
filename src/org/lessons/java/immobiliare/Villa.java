@@ -14,6 +14,6 @@ public class Villa extends Abitazione{
 
     @Override
     public String toString() {
-        return "Villa "+ code + " indirizzo:"+address+" CAP:"+ cap +" città:"+city+" superfice:"+surface +" vani:"+vani +" bagni:"+ bathroom +" mq giardino:"+surfaceGarden;
+        return "Villa "+ code + " indirizzo:"+address+" CAP:"+ cap +" città:"+city+" superfice:"+surface +" vani:"+vani +" bagni:"+ bathroom +" mq giardino:"+surfaceGarden+ " interessati:"+ interested;
     }
 }

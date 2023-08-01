@@ -7,7 +7,7 @@ public class Immobile {
     protected String city;
     protected int surface;
 
-    protected int interested=0;
+    protected int interested;
 
     public Immobile(String code, String address, String cap, String city, int surface, int interested) {
         this.code = code;

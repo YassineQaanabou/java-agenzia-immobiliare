@@ -2,7 +2,7 @@ package org.lessons.java.immobiliare;
 
 import java.util.Scanner;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
@@ -31,30 +31,33 @@ public class main {
         agenzia.addImmobile(v2);
         agenzia.addImmobile(v3);
 
-        for (Immobile immobile : agenzia.listaImmobili){
-            System.out.println(immobile);
-        }
 
         System.out.println("inserire il codice alfanumerico dell'abitazione da cercare");
         String codeToSearch=scan.nextLine();
 
-        System.out.println("ti intererssa questo immobile? y/n");
-        String choice= scan.nextLine();;
+        Immobile i = agenzia.cercaImmobile(codeToSearch);
+        if (i != null) {
+            System.out.println("L'immobile è presente nella lista");
 
-        if (choice.equalsIgnoreCase("y")){
-            for (Immobile immobile :agenzia.listaImmobili){
-                if (codeToSearch.equalsIgnoreCase(immobile.getCode())){
-                    immobile.addInterested();
+            System.out.println("ti intererssa questo immobile? y/n");
+            String choice= scan.nextLine();
+
+            if (choice.equalsIgnoreCase("y")){
+                for (Immobile immobile :agenzia.listaImmobili){
+                    if (codeToSearch.equalsIgnoreCase(immobile.getCode())){
+                        immobile.addInterested();
+                    }
                 }
+            } else {
+                System.out.println("torni a trovarci");
+
             }
         } else {
-            System.out.println("torni a trovarci");
-
+            System.out.println("L'immobile non è presente nella lista");
         }
 
+        System.out.println("L'immobile più interessante è il "+agenzia.mostInteresting().getCode());
 
-        System.out.println(agenzia.cercaImmobile(codeToSearch));
-        System.out.println(agenzia.mostInteresting());
 
         scan.close();
     }

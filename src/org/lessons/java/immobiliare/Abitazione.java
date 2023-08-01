@@ -17,6 +17,6 @@ public class Abitazione extends Immobile{
 
     @Override
     public String toString() {
-        return "Abitazione "+ code + " indirizzo:"+address+" CAP:"+ cap +" città:"+city+" superfice:"+surface +" vani:"+vani +" bagni:"+ bathroom;
+        return "Abitazione "+ code + " indirizzo:"+address+" CAP:"+ cap +" città:"+city+" superfice:"+surface +" vani:"+vani +" bagni:"+ bathroom+ " interessati:"+ interested;
     }
 }

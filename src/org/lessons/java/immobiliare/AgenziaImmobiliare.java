@@ -9,28 +9,27 @@ public class AgenziaImmobiliare {
         listaImmobili.add(immobile);
     }
 
-    public String cercaImmobile(String code){
-        String response= null;
+    public Immobile cercaImmobile(String code){
+        Immobile immobileToFind = null;
+
         for (Immobile immobile : listaImmobili) {
             if (immobile.getCode().equals(code)) {
-                response="l'immobile è presente nella lista";
+                immobileToFind=immobile;
                 break;
-            } else {
-                response="l'immobile non è presente nella lista";
             }
         }
-        return response;
+        return immobileToFind;
     }
 
-    public String mostInteresting(){
+    public Immobile mostInteresting(){
 
-        String codeInteresting=null;
+        Immobile immobileInteresting=null;
         int interested=0;
         for (Immobile immobile : listaImmobili) {
             if(immobile.getInterested()>interested){
-                codeInteresting=immobile.getCode();
+                immobileInteresting=immobile;
         }
         }
-        return ("l'immobile più interessante è il " +codeInteresting);
+        return immobileInteresting;
         }
 }
