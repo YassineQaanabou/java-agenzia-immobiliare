@@ -7,14 +7,29 @@ public class Immobile {
     protected String city;
     protected int surface;
 
-    public Immobile(String code, String address, String cap, String city, int surface) {
+    protected int interested=0;
+
+    public Immobile(String code, String address, String cap, String city, int surface, int interested) {
         this.code = code;
         this.address = address;
         this.cap = cap;
         this.city = city;
         this.surface = surface;
+        this.interested = interested;
+    }
+    public int getInterested() {
+        return interested;
     }
 
+    public String getCode() {
+        return code;
+    }
+    public void addInterested(){
+        this.interested++;
+    }
+    public void reimpostaSuperfici(int surface) {
+        this.surface = surface;
+    }
 
     @Override
     public String toString() {
