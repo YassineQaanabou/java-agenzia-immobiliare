@@ -38,6 +38,21 @@ public class main {
         System.out.println("inserire il codice alfanumerico dell'abitazione da cercare");
         String codeToSearch=scan.nextLine();
 
+        System.out.println("ti intererssa questo immobile? y/n");
+        String choice= scan.nextLine();;
+
+        if (choice.equalsIgnoreCase("y")){
+            for (Immobile immobile :agenzia.listaImmobili){
+                if (codeToSearch.equalsIgnoreCase(immobile.getCode())){
+                    immobile.addInterested();
+                }
+            }
+        } else {
+            System.out.println("torni a trovarci");
+
+        }
+
+
         System.out.println(agenzia.cercaImmobile(codeToSearch));
         System.out.println(agenzia.mostInteresting());
 
